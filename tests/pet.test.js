@@ -32,6 +32,46 @@ describe('create a new object with a set of properties', () => {
       expect(pet.hunger).toEqual(5);
     });
 
+    test('increments the fitness by 4', () => {
+      pet.fitness = 4;
+      pet.walk();
+      expect(pet.fitness).toEqual(8);
+    });
+
+    test('increases fitness by to a maximum of 10', () => {
+      pet.fitness = 8;
+      pet.walk();
+      expect(pet.fitness).toEqual(10);
+    });
+
+    test('decreases hunger level by 3 to a minimum of 0', () => {
+      pet.hunger = 2
+      pet.feed();
+      expect(pet.hunger).toEqual(0);
+    });
+
+    test('check wheter Pet needs a walk', () => {
+      pet.fitness = 2
+      expect(pet.checkUp()).toBe('I need a walk!');
+    });
+
+    test('check wheter Pet is hungry', () => {
+      pet.hunger = 6
+      expect(pet.checkUp()).toBe('I am hungry!');
+    });
+
+    test('check wheter Pet needs a walk and is hungry', () => {
+      pet.hunger = 6
+      pet.fitness = 2
+      expect(pet.checkUp()).toBe('I am hungry AND I need a walk!');
+    });
+
+    test('check wheter Pet needs a walk and is hungry', () => {
+      pet.hunger = 2
+      pet.fitness = 5
+      expect(pet.checkUp()).toBe('I feel great!');
+    });
+
 
     
   });

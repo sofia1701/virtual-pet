@@ -55,6 +55,7 @@ describe('create a new object with a set of properties', () => {
       expect(pet.checkUp()).toBe('I need a walk!');
     });
 
+    
     test('check wheter Pet is hungry', () => {
       pet.hunger = 6
       expect(pet.checkUp()).toBe('I am hungry!');
@@ -73,7 +74,22 @@ describe('create a new object with a set of properties', () => {
     });
 
 
-    
+    test('checks wheter pet is alive', () => {
+      expect(pet.isAlive).toBe(true);
+    });
+    test('checks wheter pet is alive', () => {
+      pet.age = 31;
+      expect(pet.isAlive).toBe(false);
+    });
+    test('checks wheter pet is alive', () => {
+      pet.hunger = 11;
+      expect(pet.isAlive).toBe(false);
+    });
+    test('checks wheter pet is alive', () => {
+      pet.fitness = 0;
+      expect(pet.isAlive).toBe(false);
+    });
+
   });
 
  

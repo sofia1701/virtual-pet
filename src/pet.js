@@ -1,5 +1,7 @@
-const MINIMUM_AGE = 0
+const MINIMUM_AGE = 0;
+const MAXIMUM_AGE = 30;
 const MINIMUM_HUNGER = 0;
+const MAXIMUM_HUNGER = 10;
 const MAXIMUM_FITNESS = 10;
 const MINIMUM_FITNESS = 0;
 
@@ -11,45 +13,51 @@ function Pet(name) {
     this.fitness = MAXIMUM_FITNESS;
 };
 
-Pet.prototype.growUp = function() {
-    this.age += 1
-    this.hunger += 5;
-    this.fitness -= 3;
-};
+Pet.prototype = {
 
-Pet.prototype.walk = function() {
-    if((this.fitness + 4) <= MAXIMUM_FITNESS){
-        this.fitness += 4;
-    }else{
-        this.fitness = MAXIMUM_FITNESS;     
-    }
-};
+    get isAlive() {
+        return this.age < MAXIMUM_AGE && 
+               this.hunger < MAXIMUM_HUNGER && 
+               this.fitness > MINIMUM_FITNESS;
+    },
 
-Pet.prototype.feed = function() {
-    if((this.hunger - 3 >= MINIMUM_HUNGER)) {
-        this.hunger -= 3;
-    }else{
-        this.hunger = MINIMUM_HUNGER;
-    }
-};
+    growUp() {
+        this.age += 1
+        this.hunger += 5;
+        this.fitness -= 3;
+    },
+
+    walk() {
+        if((this.fitness + 4) <= MAXIMUM_FITNESS){
+            this.fitness += 4;
+        }else{
+            this.fitness = MAXIMUM_FITNESS;     
+        }
+    },
+
+    feed() {
+        if((this.hunger - 3 >= MINIMUM_HUNGER)) {
+            this.hunger -= 3;
+        }else{
+            this.hunger = MINIMUM_HUNGER;
+        }
+    },
+
+    checkUp() {
     
-Pet.prototype.checkUp = function() {
-    
-    if(this.fitness <= 3 && this.hunger >= 5) {
-        return 'I am hungry AND I need a walk!';
-    }else if(this.fitness <= 3) {
-        return 'I need a walk!';
-    }else if(this.hunger >= 5) {
-        return 'I am hungry!';
-    }else{
-        return 'I feel great!';
-    }
+        if(this.fitness <= 3 && this.hunger >= 5) {
+            return 'I am hungry AND I need a walk!';
+        }else if(this.fitness <= 3) {
+            return 'I need a walk!';
+        }else if(this.hunger >= 5) {
+            return 'I am hungry!';
+        }else{
+            return 'I feel great!';
+        }
+    },
+
 };
-    
-
-
-
-
+  
 
 
 module.exports = Pet;

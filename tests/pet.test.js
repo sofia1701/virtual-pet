@@ -90,6 +90,15 @@ describe('create a new object with a set of properties', () => {
       expect(pet.isAlive).toBe(false);
     });
 
+
+    it('throws an error if the pet is not alive', () => {
+      pet.age = 30;
+      expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+      expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
+      expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
+      expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(');
+    });
+
   });
 
  

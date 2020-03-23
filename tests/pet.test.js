@@ -99,8 +99,6 @@ describe('create a new object with a set of properties', () => {
       expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(');
     });
 
-
-
     test('adopts a child', () => {
       let parent, child;
       parent = new Pet('Boris');

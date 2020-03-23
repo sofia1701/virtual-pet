@@ -13,12 +13,11 @@ class Pet {
         this.fitness = MAXIMUM_FITNESS;
     };
 
-
     get isAlive() {
         return this.age < MAXIMUM_AGE && 
                this.hunger < MAXIMUM_HUNGER && 
                this.fitness > MINIMUM_FITNESS;
-    }
+    };
 
     growUp() {
         if(!this.isAlive) {
@@ -28,7 +27,7 @@ class Pet {
             this.hunger += 5;
             this.fitness -= 3;
         }   
-    }
+    };
 
     walk() {
         if(!this.isAlive) {
@@ -40,7 +39,7 @@ class Pet {
                 this.fitness = MAXIMUM_FITNESS;     
             }
         }  
-    }
+    };
 
     feed() {
         if(!this.isAlive) {
@@ -52,7 +51,7 @@ class Pet {
                 this.hunger = MINIMUM_HUNGER;
             }
         }   
-    }
+    };
 
     checkUp() {
         if(!this.isAlive) {
@@ -68,11 +67,11 @@ class Pet {
                 return 'I feel great!';
             }
         }   
-    }
+    };
 
     adoptChild(child) {
         return this.children = [child];
-    }
+    };
 };
 
 module.exports = Pet;

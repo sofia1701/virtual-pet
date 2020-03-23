@@ -91,12 +91,22 @@ describe('create a new object with a set of properties', () => {
     });
 
 
-    it('throws an error if the pet is not alive', () => {
+    test('throws an error if the pet is not alive', () => {
       pet.age = 30;
       expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
       expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
       expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
       expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(');
+    });
+
+
+
+    test('adopts a child', () => {
+      let parent, child;
+      parent = new Pet('Boris');
+      child = new Pet('Amelia');
+      expect(parent.adoptChild(child)).toEqual([ { name: 'Amelia', age: 0, hunger: 0, fitness: 10 } ]);
+      expect(parent.children[0].name).toEqual('Amelia');
     });
 
   });

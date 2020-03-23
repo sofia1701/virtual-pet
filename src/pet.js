@@ -11,10 +11,7 @@ function Pet(name) {
     this.age = MINIMUM_AGE;
     this.hunger = MINIMUM_HUNGER;
     this.fitness = MAXIMUM_FITNESS;
-    
 };
-
-
 
 Pet.prototype = {
 
@@ -73,6 +70,10 @@ Pet.prototype = {
             }
         }   
     },
+
+    adoptChild(child) {
+        return this.children = [child];
+    }
 
 };
   

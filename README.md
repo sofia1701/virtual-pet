@@ -41,14 +41,6 @@ Give an example
 
 Javascript
 
-5. Contributing
-
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-6. Versioning
-
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-
-7. Authors
+5. Authors
 
 Sofia Dionisio

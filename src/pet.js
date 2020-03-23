@@ -5,21 +5,20 @@ const MAXIMUM_HUNGER = 10;
 const MAXIMUM_FITNESS = 10;
 const MINIMUM_FITNESS = 0;
 
+class Pet {
+    constructor(name) {
+        this.name = name;
+        this.age = MINIMUM_AGE;
+        this.hunger = MINIMUM_HUNGER;
+        this.fitness = MAXIMUM_FITNESS;
+    };
 
-function Pet(name) {
-    this.name = name;
-    this.age = MINIMUM_AGE;
-    this.hunger = MINIMUM_HUNGER;
-    this.fitness = MAXIMUM_FITNESS;
-};
-
-Pet.prototype = {
 
     get isAlive() {
         return this.age < MAXIMUM_AGE && 
                this.hunger < MAXIMUM_HUNGER && 
                this.fitness > MINIMUM_FITNESS;
-    },
+    }
 
     growUp() {
         if(!this.isAlive) {
@@ -29,7 +28,7 @@ Pet.prototype = {
             this.hunger += 5;
             this.fitness -= 3;
         }   
-    },
+    }
 
     walk() {
         if(!this.isAlive) {
@@ -41,7 +40,7 @@ Pet.prototype = {
                 this.fitness = MAXIMUM_FITNESS;     
             }
         }  
-    },
+    }
 
     feed() {
         if(!this.isAlive) {
@@ -53,7 +52,7 @@ Pet.prototype = {
                 this.hunger = MINIMUM_HUNGER;
             }
         }   
-    },
+    }
 
     checkUp() {
         if(!this.isAlive) {
@@ -69,14 +68,11 @@ Pet.prototype = {
                 return 'I feel great!';
             }
         }   
-    },
+    }
 
     adoptChild(child) {
         return this.children = [child];
     }
-
 };
-  
-
 
 module.exports = Pet;

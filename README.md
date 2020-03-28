@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Clone the repository
 
-`git clone git@github.com:*your-github-username*/javascript-basics.git`
+`git clone git@github.com:*your-github-username*/virtual-pet.git`
 
 Then cd into the repository.
 

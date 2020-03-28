@@ -24,7 +24,7 @@ describe('constructor function', () => {
       expect(pet.hunger).toEqual(0);
     });
 
-});
+}),
 
 describe('grow Up', () => {
 

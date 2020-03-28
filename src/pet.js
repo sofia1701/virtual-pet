@@ -11,13 +11,13 @@ class Pet {
         this.age = MINIMUM_AGE;
         this.hunger = MINIMUM_HUNGER;
         this.fitness = MAXIMUM_FITNESS;
-    };
+    }
 
     get isAlive() {
         return this.age < MAXIMUM_AGE && 
                this.hunger < MAXIMUM_HUNGER && 
                this.fitness > MINIMUM_FITNESS;
-    };
+    }
 
     growUp() {
         if(!this.isAlive) {
@@ -26,7 +26,7 @@ class Pet {
         this.age += 1
         this.hunger += 5;
         this.fitness -= 3; 
-    };
+    }
 
     walk() {
         if(!this.isAlive) {
@@ -37,7 +37,7 @@ class Pet {
         }else{
             this.fitness = MAXIMUM_FITNESS;     
         }  
-    };
+    }
 
     feed() {
         if(!this.isAlive) {
@@ -48,7 +48,7 @@ class Pet {
         }else{
             this.hunger = MINIMUM_HUNGER;
         }   
-    };
+    }
 
     checkUp() {
         if(!this.isAlive) {
@@ -62,14 +62,14 @@ class Pet {
             return 'I am hungry!';
         }
         return 'I feel great!';   
-    };
+    }
 
     adoptChild(child) {
         if(!this.isAlive) {
             throw new Error('Your pet is no longer alive :(');
         }
         return this.children = [child];
-    };
+    }
 };
 
 module.exports = Pet;
